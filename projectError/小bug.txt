@@ -1,0 +1,2 @@
+1. radio的change事件没有反应，明明在不同的input中：需要不同的id
+2.arguments.callee.offset是什么
