@@ -1,0 +1,14 @@
+整理js最重要的几个概念：原型链，继承，闭包，（面向对象）
+继承实现，设计模式
+bind,call,apply（面试前看）
+css几种布局（需要看个视频）
+promise原理实现,相关genertor,async,co
+vue/react生命周期，原理（数据绑定，diff,vDom 想清楚并实现）
+图片懒加载（看看lazysizes源码和react-loayload），骨架屏，云端（最好写个东西）
+webpack弄个视频
+svg有时间，但是要基础
+算法：排序
+上拉加载： 条件：向上滚动+屏幕高度=文本高度 异步加载数据： 提示文字
+		
+
+项目：懒加载 缓存 vuex存数据 blob对象
