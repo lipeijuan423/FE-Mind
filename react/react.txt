@@ -1,0 +1,95 @@
+元素是构成 React 应用的最小单位，JSX 就是用来声明 React 当中的元素
+React DOM 可以确保 浏览器 DOM 的数据内容与 React 元素保持一致
+添加自定义属性需要使用 data- 前缀。
+React JSX 代码可以放在一个独立文件ReactDOM.render(）
+JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 
+JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代
+设置内联样式. React 会在指定元素数字后自动添加 px
+var myStyle = {
+    fontSize: 100,
+    color: '#FF0000'
+};
+ReactDOM.render(
+    <h1 style = {myStyle}>菜鸟教程</h1>,
+    document.getElementById('example')
+);
+注释需要写在花括号中
+JSX 允许在模板中插入数组，数组会自动展开所有成员
+1、我们可以使用函数定义了一个组件：
+function HelloMessage(props) {
+    return <h1>Hello World!</h1>;
+}
+也可以使用 ES6 class 来定义一个组件:
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello World!</h1>;
+  }
+}
+2、const element = <HelloMessage /> 为用户自定义的组件。
+原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头
+注意，在添加属性时， class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。
+componentDidMount初始化 挂载
+componentWillUnmount清除 卸载
+不应该关心某组件是被定义为一个函数还是一个类
+状态通常被称为局部或封装
+state 和 props 主要的区别在于 props 是不可变的，而 state 可以根据与用户交互来改变
+组件类的 defaultProps 属性为 props 设置默认值
+在父组件中设置 state， 并通过在子组件上使用 props 将其传递到子组件
+Props 验证使用 propTypes
+MyTitle.propTypes = {
+  title: PropTypes.string
+};
+1.在函数中 onClick={activateLasers}
+2.extends组件中
+// 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+this.handleClick = this.handleClick.bind(this);
+onClick={this.handleClick}
+实验性的属性初始化器语法
+ handleClick = () => {
+    console.log('this is:', this);
+  }
+箭头函数onClick={(e) => this.handleClick(e)} 如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染
+React 中另一个不同是你不能使用返回 false 的方式阻止默认行为， 你必须明确的使用 preventDefault
+传递参数：<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+通过箭头函数的方式，事件对象必须显式的进行传递，但是通过 bind 的方式，事件对象以及更多的参数将会被隐式的进行传递。
+通过 bind 方式向监听函数传参，在类组件中定义的监听函数，事件对象 e 要排在所传递参数的后面
+加载html: dangerouslySetInnerHTML={{ __html:item.content}}
+希望隐藏组件，即使它被其他组件渲染。让 render 方法返回 null 而不是它的渲染结果即可实现
+this.setState(prevState => ({
+      showWarning: !prevState.showWarning
+    }));
+这里的prevState是什么
+Keys 可以在 DOM 中的某些元素被增加或删除的时候帮助 React 识别哪些元素发生了变化
+key 会作为给 React 的提示，但不会传递给你的组件
+声明了一个单独的 listItems 变量并将其包含在 JSX 中
+如果一个 map() 嵌套了太多层级，那你就可以提取出组件
+setState是React事件处理函数中和请求回调函数中触发UI更新的主要方法
+setState(object nextState[, function callback])
+1.nextState，将要设置的新状态，该状态会和当前的state合并
+2.callback，可选参数，回调函数。该函数会在setState设置成功，且组件重新渲染后调用。
+setState()并不一定是同步的，为了提升性能React会批量执行state和DOM渲染。
+replaceState()方法与setState()类似，但是方法只会保留nextState中状态，原state不在nextState中的状态都会被删除
+props相当于组件的数据流，它总是会从父组件向下传递至所有的子组件中
+setProps(object nextProps[, function callback])合并原有 props
+replaceProps(object nextProps[, function callback])删除原有 props
+forceUpdate([function callback])适用于this.props和this.state之外的组件重绘
+调用自身的render()方
+bool isMounted()表示组件是否已挂载到DOM中
+使用该方法保证了setState()和forceUpdate()在异步场景下的调用不会出错。
+组件的生命周期可分成三个状态：
+Mounting：已插入真实 DOM
+Updating：正在被重新渲染
+Unmounting：已移出真实 DOM
+生命周期：
+componentWillMount
+componentDidMount调用setTimeout, setInterval或者发送AJAX请求等操作(防止异步操作阻塞UI)。this.getDOMNode()来进行访问
+componentWillReceiveProps 在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。
+shouldComponentUpdate 返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。 
+componentWillUpdate在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用
+componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用
+componentWillUnmount在组件从 DOM 中移除之前立刻被调用
+在 React 中，不使用 selected 属性，而在根 select 标签上用 value 属性来表示选中项。
+React 支持一种非常特殊的属性 Ref ，你可以用来绑定到 render() 输出的任何组件上
+可以使用 getDOMNode()方法获取DOM元素
+
