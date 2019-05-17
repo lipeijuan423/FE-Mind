@@ -1,0 +1,1 @@
+Object.prototype.toString.call(this.value).toLowerCase() === '[object object]';
