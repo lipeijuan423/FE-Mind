@@ -24,3 +24,15 @@ Promise主要解决异步回调问题，便于理解维护
 8.  缓存： 强缓存（Expires Cache-control） 协商缓存（Last-modified If-Modified-Since ETag If-None-Match）
 9. 重绘 回流
 10. requestAnimationFrame 的原理
+11.资源预加载
+12.异步加载
+13.通信方式
+14.自适应布局
+15.postcss - 长宽比
+16.es6 - class proxy map symbol
+17.事件执行 
+18.git 常见冲突
+19.移动端视口
+20.跨域
+21.安全
+22.单元测试
