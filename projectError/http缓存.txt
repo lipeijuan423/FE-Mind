@@ -1,0 +1,9 @@
+1. GET请求URL后加随机数，让服务器认为不是相同的请求。
+
+例 "http://www.example.com/index.php?class=aitcle&page=5&_t=" + new Date().getTime()
+
+2. 在ajax发送请求前加上 xmlHttpRequest.setRequestHeader("If-Modified-Since","0")
+
+3. 在ajax发送请求前加上 xmlHttpRequest.setRequestHeader("Cache-Control","no-cache");
+
+4. 服务端响应请求时加 header("Cache-Control: no-cache, must-revalidate"); （PHP）

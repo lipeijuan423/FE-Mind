@@ -1,0 +1,38 @@
+整理js最重要的几个概念：原型链，继承，闭包，（面向对象）
+继承实现，设计模式
+bind,call,apply（面试前看）
+css几种布局（需要看个视频）
+promise原理实现,相关genertor,async,co
+vue/react生命周期，原理（数据绑定，diff,vDom 想清楚并实现）
+图片懒加载（看看lazysizes源码和react-loayload），骨架屏，云端（最好写个东西）
+webpack弄个视频
+svg有时间，但是要基础
+算法：排序
+上拉加载： 条件：向上滚动+屏幕高度=文本高度 异步加载数据： 提示文字
+		
+
+项目：懒加载 缓存 vuex存数据 blob对象
+1. 如何实现一个bind函数
+2. PromiseA+ 和 Promise是什么
+PromiseA+是主流规范
+Promise主要解决异步回调问题，便于理解维护
+3. 作用域 闭包 原型链 继承 new this
+4. 深拷贝 vs 浅拷贝
+5. cookie localStorage sessionStorage IndexDB
+6. 跨域： JSONP CROS(Access-Control-Allow-Origin) document.domain postMessage
+7. service worker : 通常用来缓存文件，提高首屏速度
+8.  缓存： 强缓存（Expires Cache-control） 协商缓存（Last-modified If-Modified-Since ETag If-None-Match）
+9. 重绘 回流
+10. requestAnimationFrame 的原理
+11.资源预加载
+12.异步加载
+13.通信方式
+14.自适应布局
+15.postcss - 长宽比
+16.es6 - class proxy map symbol
+17.事件执行 
+18.git 常见冲突
+19.移动端视口
+20.跨域
+21.安全
+22.单元测试
