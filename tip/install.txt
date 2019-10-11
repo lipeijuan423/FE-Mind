@@ -1,7 +1,0 @@
-// 提示已安装
-npm install -g npm
-npm install npm@latest -g
-// 安装最新的node, window竟然不支持
-npn install -g n 
-// vue-cli3.0 npm有问题，yarn安装 环境变量很重要
-yarn global add @vue/cli
